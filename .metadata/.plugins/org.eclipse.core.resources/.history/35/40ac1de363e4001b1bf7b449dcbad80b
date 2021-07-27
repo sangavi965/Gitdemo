@@ -1,0 +1,113 @@
+package com.lti.dao;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeSet;
+
+import com.lti.model.Course;
+import com.lti.model.Courses;
+import com.lti.model.DegreeCourse;
+import com.lti.model.Student;
+
+public class InMemoryStudentDaoImpl implements StudentDao {
+	static List<Student> students = new ArrayList<Student>();
+	// one instance created for all object--static
+	static Set<Course> courses = new HashSet<Course>();
+	static Map<Student, Course> enrollments = new HashMap<Student, Course>();
+
+	public InMemoryStudentDaoImpl() {
+		students.add(new Student(1001, "john", LocalDate.of(2000, 02, 15)));
+		students.add(new Student(1002, "Mark", LocalDate.of(2003, 03, 13)));
+		students.add(new Student(1003, "Kavi", LocalDate.of(2002, 02, 14)));
+		students.add(new Student(1004, "Pavi", LocalDate.of(2001, 01, 16)));
+
+		courses.add(new Course(10001, "java", 4, 3000));
+		courses.add(new Course(10002, "PHP", 2, 3500));
+		courses.add(new Course(10003, "Python", 6, 4500));
+
+	}
+
+	public Course findACourse(int courseId) {
+		for (Course course : courses) {
+			if (course.getCid() == courseId)
+				return course;
+		}
+		return null;
+	}
+
+	@Override
+	public boolean addStudent(Student student) {
+		return students.add(student);
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		Student existingStudent = findAStudent(student.getId());
+		// check if stud with that id is present in thr collection
+		if (existingStudent != null) {
+			int position = students.indexOf(existingStudent);
+			// check pos for that stud is present
+			students.set(position, student);
+			System.out.println("student details updated\n");
+			// we r updating the student with new values by passing the onject"student"
+		} else {
+			System.out.println("Student not found");
+		}
+	}
+
+	@Override
+	public void removeStudent(int id) {
+		Student existingStudent = findAStudent(id);
+//		if (existingStudent != null) {
+//			int position = students.indexOf(existingStudent);
+//			students.remove(position);
+//			
+//		} 
+		if (existingStudent != null) {
+			students.remove(existingStudent);
+			System.out.println("removed successfully");
+		} else {
+			System.out.println("Student not found");
+		}
+	}
+
+	@Override
+	public Student findAStudent(int id) {
+		for (Student st : students) {
+			if (st.getId() == id) {
+				return st;
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Student> viewAllStudents() {
+		return students;
+	}
+
+	@Override
+	public void enroll(int studentId, int courseId) {
+		Student student = findAStudent(studentId);
+		Course course = findACourse(courseId);
+		
+		if(student==null || course==null) {
+			System.out.println("either student or course is not found");
+		}else {
+		enrollments.put(student, course);
+		System.out.println("Enrolled successfully");
+	}
+	}
+	@Override
+	public Collection<Entry<Student,Course>> viewEnrollments() {
+		return enrollments.entrySet();
+	}
+
+}

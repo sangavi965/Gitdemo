@@ -1,0 +1,7 @@
+package com.lti.frst;
+
+public class second {
+	public int num=20;
+	 static  String name="lti";
+
+}

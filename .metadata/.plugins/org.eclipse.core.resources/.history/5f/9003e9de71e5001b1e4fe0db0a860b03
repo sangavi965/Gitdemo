@@ -1,0 +1,6 @@
+package com.lti.frst;
+
+public class second {
+	public int num=20;
+
+}

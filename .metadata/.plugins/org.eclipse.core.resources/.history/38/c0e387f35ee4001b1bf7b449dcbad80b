@@ -1,0 +1,61 @@
+package com.lti.dao;
+
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import com.lti.model.Course;
+import com.lti.model.Courses;
+import com.lti.model.Student;
+
+public class PersistentStudentDaoImpl implements StudentDao {
+
+	@Override
+	public boolean addStudent(Student student) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void updateStudent(Student student) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void removeStudent(int id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Student findAStudent(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> viewAllStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void enroll(int studentId, int courseId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Course findACourse(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Set<Entry<Student, Courses>> viewEnrollments() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

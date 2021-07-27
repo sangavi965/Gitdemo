@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>StudentManagement</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/com/lti/dao/CollectionDemo.java</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/CollectionDemo.java</locationURI>
+		</link>
+		<link>
+			<name>src/com/lti/dao/ConnectionFactory.java</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/ConnectionFactory.java</locationURI>
+		</link>
+		<link>
+			<name>src/com/lti/dao/InMemoryStudentDaoImpl.java</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/InMemoryStudentDaoImpl.java</locationURI>
+		</link>
+		<link>
+			<name>src/com/lti/dao/StudentDao.java</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Downloads/StudentDao.java</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

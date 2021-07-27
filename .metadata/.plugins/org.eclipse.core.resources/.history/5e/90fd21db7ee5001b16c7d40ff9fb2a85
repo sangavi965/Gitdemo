@@ -1,0 +1,19 @@
+package com.lti.main;
+
+import java.util.Scanner;
+
+import com.lti.frst.hellolWorld;
+
+public class four extends hellolWorld {
+	public static void main(String[] args) {
+		hellolWorld hw=new hellolWorld();
+		Scanner sca=new Scanner(System.in);
+		int number1=sca.nextInt();
+		int number2=sca.nextInt();
+         hw.add(number1,number2) );
+         
+		
+	}
+	
+
+}
